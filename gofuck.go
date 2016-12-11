@@ -149,7 +149,16 @@ func execute(program string) {
 			band[bp]--
 			pc++
 		case string(instr) == ".":
+			fmt.Printf("%c", band[bp])
+			pc++
 		case string(instr) == ",":
+			var i rune
+			_, err := fmt.Scanf("%c", &i)
+			if err != nil {
+				log.Fatal(err)
+			}
+			fmt.Println(i)
+			pc++
 		}
 	}
 }
