@@ -104,7 +104,6 @@ func checkSyntax(program string) {
 
 func execute(program string) {
 	checkSyntax(program)
-	fmt.Println(band)
 	for pc < len(program) {
 		switch instr := program[pc]; {
 		case string(instr) == "<":
@@ -137,11 +136,10 @@ func execute(program string) {
 			loopStack = append(loopStack, pc)
 			pc++
 		case string(instr) == "]":
-			fmt.Println(band[bp])
 			if band[bp] != 0 {
 				pc = loopStack[len(loopStack)-1] + 1
 			} else {
-				loopStack = append(loopStack[:len(loopStack)-3], loopStack[len(loopStack)-2]) // basiclally popping the last element
+				loopStack = loopStack[:len(loopStack)-1] // basiclally popping the last element
 				pc++
 			}
 		case string(instr) == "+":
@@ -154,7 +152,6 @@ func execute(program string) {
 		case string(instr) == ",":
 		}
 	}
-	fmt.Println(band)
 }
 
 func main() {
