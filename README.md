@@ -8,7 +8,7 @@ Usage
 ------
 
 `./gofuck`
-will open a writestream. If you are done with writing end your code with ';'.
+will open a writestream. If you are done with writing, end your code with ';'.
 
 `./gofuck <filename>`
 will open the file and interprate the content as a brainfuck program.
