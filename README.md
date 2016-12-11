@@ -1,6 +1,4 @@
 # GoFuck
-GoFuck
-==========
 
 This is a Brainfuck interpreter written in Golang.
 
