@@ -62,7 +62,7 @@ func onlyInstr(text string) string {
 
 func convStdToStr() string {
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter text: ")
+	fmt.Print("Enter your program. End it with a ';'\n")
 	text, _ := reader.ReadString(';')
 	return onlyInstr(text)
 }
@@ -94,11 +94,11 @@ func checkSyntax(program string) {
 			count--
 		}
 		if count < 0 {
-			log.Fatal("Wrong parenthesis: ", key+1)
+			log.Fatal("Wrong parenthesis at character ", key+1)
 		}
 	}
 	if count > 0 {
-		log.Fatal("Too many parenthesis!")
+		log.Fatal("Too many or missing parenthesis!")
 	}
 }
 
